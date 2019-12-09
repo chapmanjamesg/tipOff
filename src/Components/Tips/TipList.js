@@ -12,8 +12,12 @@ class TipList extends Component {
     componentDidMount() {
         APIManager.getAll(`tips?userId=${JSON.parse(localStorage.getItem("credentials")).userId}`)
             .then((tips) => {
+                const sortTips = tips.sort(function (a, b) {
+                    let d1 = new Date(a.date), d2 = new Date(b.date)
+                    return d1 - d2
+                })
                 this.setState({
-                    tips: tips
+                    tips: sortTips
                 })
             })
     }
