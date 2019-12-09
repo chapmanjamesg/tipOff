@@ -1,9 +1,9 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
-import Registration from "./Auth/Registration"
+import Registration from "./Auth/Registration";
 import Login from "./Auth/Login";
 import TipList from "./Tips/TipList";
-import TipForm from "./Tips/TipForm"
+import TipForm from "./Tips/TipForm";
 
 export default class ApplicationViews extends Component {
 
@@ -37,8 +37,8 @@ export default class ApplicationViews extends Component {
                     }}
                 />
                 <Route 
-                    exact path="/tips/:tipId(\d=)/edit" render={props => {
-                        return <TipForm {...props} isNew={false} />
+                    exact path="/tips/:tipId(\d+)/edit" render={props => {
+                        return <TipForm {...props} isNew= {false} />
                     }}
                 />
             </>

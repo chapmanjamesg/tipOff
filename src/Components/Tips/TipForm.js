@@ -12,7 +12,7 @@ class TipForm extends Component {
 
     handleFieldChange = evt => {
         const stateToChange = {};
-        stateToChange[evt.target.id] = evt.target.value
+        stateToChange[evt.target.id]=evt.target.value
         this.setState(stateToChange)
     }
 
