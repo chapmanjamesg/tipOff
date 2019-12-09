@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from "react-router-dom";
 import './index.css';
 import 'tachyons';
-import tipOff from './Components/tipOff'
+import TipOff from './Components/TipOff'
 
 ReactDOM.render(
     <Router>
-        <tipOff />
+        <TipOff />
     </Router>
     , document.getElementById('root'));
 

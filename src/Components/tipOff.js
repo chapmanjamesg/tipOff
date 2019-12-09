@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import NavBar from "./Nav/NavBar";
 import ApplicationViews from "./ApplicationViews"
 
-class tipOff extends Component {
+class TipOff extends Component {
     state = {
         user: false
     }
@@ -43,4 +43,4 @@ class tipOff extends Component {
         )
     }
 }
-export default tipOff
+export default TipOff
