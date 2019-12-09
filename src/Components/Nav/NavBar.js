@@ -21,19 +21,19 @@ class NavBar extends Component {
                 <ul className="nav nav-pills nav-fill">
 
                     <li className="nav-item">
-                        <Link className="nav-link" to="/articles">Home</Link>
+                        <Link className="nav-link" to="/home">Home</Link>
                     </li>
 
                     <li className="nav-item">
-                        <Link className="nav-link" to="/friends">Tips</Link>
+                        <Link className="nav-link" to="/tips">Tips</Link>
                     </li>
 
                     <li className="nav-item">
-                        <Link className="nav-link" to="/messages">Notes</Link>
+                        <Link className="nav-link" to="/notes">Notes</Link>
                     </li>
 
                     <li className="nav-item">
-                        <Link className="nav-link" to="/tasks">Totals</Link>
+                        <Link className="nav-link" to="/totals">Totals</Link>
                     </li>
                 </ul>
                 <span className="navbar-text">
