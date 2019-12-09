@@ -17,5 +17,14 @@ export default {
             },
             body: JSON.stringify(newItem)
         }).then(data => data.json())
-    }
+    },
+    put(page, id, updatedItem) {
+        return fetch(`${remoteURL}/${page}/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updatedItem)
+        }).then(data => data.json())
+    },
 }

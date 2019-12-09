@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-const getUserId = () => JSON.parse(localStorage.gitItem("credentials")).userId
-
 class TipCard extends Component {
 
     render() {
