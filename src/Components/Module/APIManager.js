@@ -27,4 +27,9 @@ export default {
             body: JSON.stringify(updatedItem)
         }).then(data => data.json())
     },
+    delete(page, id) {
+        return fetch(`${remoteURL}/${page}/${id}`, {
+            method: "DELETE",
+        }).then(data => data.json())
+    },
 }

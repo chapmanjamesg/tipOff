@@ -67,7 +67,7 @@ class TipForm extends Component {
                     <fieldset>
                         <label htmlFor="date">Date:  </label>
                         <input 
-                            type="text"
+                            type="date"
                             required
                             onChange={this.handleFieldChange}
                             id="date"
@@ -95,3 +95,5 @@ class TipForm extends Component {
         )
     }
 }
+
+export default TipForm

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class TipCard extends Component {
 
     render() {
@@ -7,8 +8,8 @@ class TipCard extends Component {
             <div className="card">
                 <div className="card-content">
                     <h2>Tip Tracker</h2>
-                    <h3>Date: <span className="card-tipDate">{this.props.tips.date}</span></h3>
-                    <p>Amount: <span className="card-tipAmount">${this.props.tips.amount}</span></p>
+                    <h3>Date: <span className="card-tipDate">{this.props.tip.date}</span></h3>
+                    <p>Amount: <span className="card-tipAmount">${this.props.tip.amount}</span></p>
                     <button 
                         type="button"
                         onClick={() => {
