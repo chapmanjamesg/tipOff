@@ -37,8 +37,8 @@ export default class ApplicationViews extends Component {
                     }}
                 />
                 <Route 
-                    exact path="/tips/:tipId(\d=)/edit" render={props => {
-                        return <TipForm {...props} isNew={false} />
+                    path="/tips/:tipId(\d=)/edit" render={props => {
+                        return <TipForm {...props} isNew= {false} />
                     }}
                 />
             </>
