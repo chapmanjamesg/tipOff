@@ -6,7 +6,7 @@ class TipForm extends Component {
     state = {
         userId: JSON.parse(localStorage.getItem("credentials")).userId,
         date: "",
-        amount: "",
+        amount: 0,
         loadingStatus: false,
     }
 
@@ -25,7 +25,7 @@ class TipForm extends Component {
             const tip = {
                 userId: JSON.parse(localStorage.getItem("credentials")).userId,
                 date: this.state.date,
-                amount: this.state.amount,
+                amount: Number(this.state.amount),
             }
             APIManager.post("tips", tip)
                 .then(() =>
@@ -39,12 +39,12 @@ class TipForm extends Component {
         const editedTip = {
             id: this.props.match.params.tipId,
             userId: JSON.parse(localStorage.getItem("credentials")).userId,
-            amount: this.state.amount,
+            amount: Number(this.state.amount),
             date: this.state.date,
         };
 
         APIManager.put("tips", this.props.match.params.tipId, editedTip)
-            .then(()=>this.props.history.push("/tips"))
+            .then(() => this.props.history.push("/tips"))
     };
 
     componentDidMount() {

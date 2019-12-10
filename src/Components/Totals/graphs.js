@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { Line } from 'react-chartjs-2';
-import APIManager from '../Module/APIManager'
+import React, { Component } from 'react'
+import Line from 'react-chartjs-2'
 
-const LineChart = (props) => {
-    // const TotalTipsInMonth = props.tips.reduce((acc, tips) => acc + tips.amount, 0)
+
+class LineChart extends Component {
+    const TotalTipsInMonth = props
     const totalTipsByEachMonth = []
 
     const data = {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', "September", "October", "November", "December"],
-        dataSets: [
+        datasets: [
             {
                 label: 'Tips by the Month',
                 fill: false,
@@ -36,31 +36,3 @@ const LineChart = (props) => {
         <Line data={data} />
     )
 }
-export default class Total extends Component {
-
-    state = {
-        tips: []
-    }
-
-    componentDidMount() {
-        APIManager.getAll(`tips?userId=${JSON.parse(localStorage.getItem("credentials")).userId}`)
-            .then((tips) => {
-                const sortTips = tips.sort(function (a, b) {
-                    let d1 = new Date(a.date), d2 = new Date(b.date)
-                    return d1 - d2
-                })
-                this.setState({
-                    tips: sortTips
-                })
-            })
-    }
-    render() {
-        return (
-            <div>
-                <h2>Tips Chart for the Year</h2>
-                <LineChart tips={this.tips} />
-            </div>
-        );
-    }
-}
-
