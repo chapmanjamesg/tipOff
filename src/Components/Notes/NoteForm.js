@@ -35,21 +35,19 @@ class NoteForm extends Component {
     }
     updateExistingNote = evt => {
         evt.preventDefault();
-        this.{
-            setState({ loadingStatus: true })
-            const editedNote = {
-                id: this.props.match.params.noteId,
-                userId: JSON.parse(localStorage.getItem("credentials")).userId,
-                note: this.state.note,
-                date: this.state.date,
-            }
-            APIManager.put("notes", this.props.match.params.noteId, editedNote)
-                .then(() => this.props.history.push("/notes"))
+        this.setState({ loadingStatus: true })
+        const editedNote = {
+            id: this.props.match.params.noteId,
+            userId: JSON.parse(localStorage.getItem("credentials")).userId,
+            note: this.state.note,
+            date: this.state.date,
         }
+        APIManager.put("notes", this.props.match.params.noteId, editedNote)
+            .then(() => this.props.history.push("/notes"))
     }
 
-    componentDidMount(){
-        if(!this.props.isNew) {
+    componentDidMount() {
+        if (!this.props.isNew) {
             APIManager.get("notes", this.props.match.params.noteId)
                 .then(note => {
                     this.setState({
@@ -60,38 +58,40 @@ class NoteForm extends Component {
         }
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <>
-            <form>
-                <fieldset>
-                    <label htmlFor="date">Date:  </label>
-                    <input 
-                        type="date"
-                        required
-                        onChange={this.handleFieldChange}
-                        id="date"
-                        value={this.state.date}
-                        />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="note">Note:  </label>
-                    <input 
-                        type="text"
-                        required
-                        onChange={this.handleFieldChange}
-                        id="note"
-                        placeholder="Your Note"
-                        value={this.state.note}
-                        />
-                </fieldset>
-                <button 
-                    type="button"
-                    disabled={this.state.loadingStatus}
-                    onClick={this.props.isNew ? this.constructNewNote : this.updateExistingNote}
+                <form>
+                    <fieldset>
+                        <label htmlFor="date">Date:
+                        <input
+                                type="date"
+                                required
+                                onChange={this.handleFieldChange}
+                                id="date"
+                                value={this.state.date}
+                            />
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="note">Note:
+                        <textarea
+                                type="textarea"
+                                required
+                                onChange={this.handleFieldChange}
+                                id="note"
+                                placeholder="Your Note"
+                                value={this.state.note}
+                            />
+                        </label>
+                    </fieldset>
+                    <button
+                        type="button"
+                        disabled={this.state.loadingStatus}
+                        onClick={this.props.isNew ? this.constructNewNote : this.updateExistingNote}
                     >Submit</button>
-            </form>
-        </>
+                </form>
+            </>
         )
     }
 }
