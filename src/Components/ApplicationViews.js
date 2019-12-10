@@ -1,9 +1,11 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
-import Registration from "./Auth/Registration"
+import Registration from "./Auth/Registration";
 import Login from "./Auth/Login";
 import TipList from "./Tips/TipList";
-import TipForm from "./Tips/TipForm"
+import TipForm from "./Tips/TipForm";
+import NoteList from "./Notes/NoteList";
+import NoteForm from "./Notes/NoteForm";
 
 export default class ApplicationViews extends Component {
 
@@ -37,8 +39,24 @@ export default class ApplicationViews extends Component {
                     }}
                 />
                 <Route 
-                    exact path="/tips/:tipId(\d=)/edit" render={props => {
-                        return <TipForm {...props} isNew={false} />
+                    exact path="/tips/:tipId(\d+)/edit" render={props => {
+                        return <TipForm {...props} isNew= {false} />
+                    }}
+                />
+                                <Route
+                    exact path="/notes" render={props => {
+                        if (this.props.user) {
+                            return <NoteList {...props} />
+                        } else { return <Redirect to="/login" /> }
+                    }} />
+                <Route 
+                    exact path="/notes/new" render= {props => {
+                        return <NoteForm {...props} isNew= {true} />
+                    }}
+                />
+                <Route 
+                    exact path="/notes/:noteId(\d+)/edit" render={props => {
+                        return <NoteForm {...props} isNew= {false} />
                     }}
                 />
             </>

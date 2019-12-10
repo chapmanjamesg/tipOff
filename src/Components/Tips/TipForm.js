@@ -22,9 +22,8 @@ class TipForm extends Component {
             window.alert("Please enter a tip!")
         } else {
             this.setState({ loadingStatus: true })
-            const userId = JSON.parse(localStorage.getItem("credentials")).userId
             const tip = {
-                userId: Number(userId),
+                userId: JSON.parse(localStorage.getItem("credentials")).userId,
                 date: this.state.date,
                 amount: this.state.amount,
             }
@@ -45,7 +44,7 @@ class TipForm extends Component {
         };
 
         APIManager.put("tips", this.props.match.params.tipId, editedTip)
-            .then(() => this.props.history.push("/tips"))
+            .then(()=>this.props.history.push("/tips"))
     };
 
     componentDidMount() {
@@ -55,41 +54,43 @@ class TipForm extends Component {
                     this.setState({
                         amount: tip.tip,
                         loadingStatus: false,
-                    });
-                });
+                    })
+                })
         }
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <>
                 <form>
                     <fieldset>
-                        <label htmlFor="date">Date:  </label>
-                        <input 
-                            type="date"
-                            required
-                            onChange={this.handleFieldChange}
-                            id="date"
-                            value={this.state.date}
+                        <label htmlFor="date">Date:
+                        <input
+                                type="date"
+                                required
+                                onChange={this.handleFieldChange}
+                                id="date"
+                                value={this.state.date}
                             />
+                        </label>
                     </fieldset>
                     <fieldset>
-                        <label htmlFor="amount">Amount:  </label>
-                        <input 
-                            type="text"
-                            required
-                            onChange={this.handleFieldChange}
-                            id="amount"
-                            placeholder="Your Tipped Amount"
-                            value={this.state.amount}
+                        <label htmlFor="amount">Amount:
+                        <input
+                                type="text"
+                                required
+                                onChange={this.handleFieldChange}
+                                id="amount"
+                                placeholder="Your Tipped Amount"
+                                value={this.state.amount}
                             />
+                        </label>
                     </fieldset>
-                    <button 
+                    <button
                         type="button"
                         disabled={this.state.loadingStatus}
                         onClick={this.props.isNew ? this.constructNewTip : this.updateExistingTip}
-                        >Submit</button>
+                    >Submit</button>
                 </form>
             </>
         )

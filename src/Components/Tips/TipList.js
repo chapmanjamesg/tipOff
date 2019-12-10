@@ -25,7 +25,7 @@ class TipList extends Component {
     deleteTip = id => {
         APIManager.delete("tips", id)
             .then(() => {
-                APIManager.getAll("tips")
+                APIManager.getAll(`tips?userId=${JSON.parse(localStorage.getItem("credentials")).userId}`)
                     .then((newTips) => {
                         this.setState({
                             tips: newTips
@@ -37,12 +37,13 @@ class TipList extends Component {
     render() {
         return (
             <>
-                <div
+                <button 
+                    type="button"
                     onClick={() => {
                         this.props.history.push("/tips/new")
                     }}>
                     Add New Tip
-                    </div>
+                    </button>
                 <hr />
                 <div>
                     {this.state.tips.map(tip =>
