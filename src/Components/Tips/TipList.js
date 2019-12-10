@@ -37,7 +37,7 @@ class TipList extends Component {
     render() {
         return (
             <>
-                <button
+                <button 
                     type="button"
                     onClick={() => {
                         this.props.history.push("/tips/new")
