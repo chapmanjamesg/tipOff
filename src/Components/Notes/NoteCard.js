@@ -6,8 +6,7 @@ class NoteCard extends Component {
         return (
             <div className="card">
                 <div className="card-content">
-                    <h2>Notes for the Day</h2>
-                    <h3>Date: <span className="card-noteDate">{this.props.note.date}</span></h3>
+                    <h5>Date: <span className="card-noteDate">{this.props.note.date}</span></h5>
                     <p>Note: <span className="card-note">{this.props.note.note}</span></p>
                     <button 
                         type="button"

@@ -66,6 +66,7 @@ class Home extends Component {
         return (
             <>
                 <div>
+                    <h2>Recent Tips</h2>
                     {this.state.tips.map(tip =>
                         <TipCard
                             key={tip.id}
@@ -86,6 +87,7 @@ class Home extends Component {
                 <br />
                 <br />
                 <div>
+                    <h2>Recent Notes</h2>
                     {this.state.notes.map(note =>
                         <NoteCard
                             key={note.id}
