@@ -7,8 +7,7 @@ class TipCard extends Component {
         return (
             <div className="card">
                 <div className="card-content">
-                    <h2>Tip Tracker</h2>
-                    <h3>Date: <span className="card-tipDate">{this.props.tip.date}</span></h3>
+                    <h5>Date: <span className="card-tipDate">{this.props.tip.date}</span></h5>
                     <p>Amount: <span className="card-tipAmount">${this.props.tip.amount}</span></p>
                     <button 
                         type="button"

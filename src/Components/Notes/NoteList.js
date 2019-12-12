@@ -46,6 +46,7 @@ class NoteList extends Component {
                     </button>
                 <hr />
                 <div>
+                    <h2>Important Notes</h2>
                     {this.state.notes.map(note =>
                         <NoteCard
                             key={note.id}
