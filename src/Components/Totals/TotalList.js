@@ -45,12 +45,16 @@ export default class Total extends Component {
                         testingArray.push(month)
                     })
                 })
-                console.log( "test", testingArray[2][1])
-                const testingAdd = testingArray[2][1].reduce((a,b) => 
-                    a += b.amount, 0
-                );
+                // console.log(testingArray)
+                // console.log( "test", testingArray[2][1])
+                // const testingAdd = testingArray[2][1].reduce((a,b) => 
+                //     a += b.amount, 0
+                // );
+                const testingAdd = testingArray.map(tips =>
+                    tips[1].reduce((total,b) => total + b.amount, 0)
+                    )
+                    // console.log("single",tips[1])
                 console.log(testingAdd)     
-
                 // testingArray.push(byYearAndByMonth[2019])
                 // console.log("test",testingArray)
                 // console.log(byYearAndByMonth)
@@ -59,7 +63,7 @@ export default class Total extends Component {
                     tips: sortTips,
                     month: testingArray,
                     data: {
-                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', "September", "October", "November", "December"],
+                        labels: [ "October", "November", "December", 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', "September"],
                         dataSets: [
                             {
                                 label: 'Tips by the Month',
@@ -80,7 +84,7 @@ export default class Total extends Component {
                                 pointHoverBorderWidth: 2,
                                 pointRadius: 1,
                                 pointHitRadius: 10,
-                                data: []
+                                data: testingAdd
                             }
 
                         ],
@@ -107,7 +111,7 @@ export default class Total extends Component {
                     <h2>Tips Chart for the Year</h2>
                     <Line data={this.state.data} />
                     {console.log(this.state)}
-                    {console.log(this.state.month[2][1][4].amount)}
+                    {/* {console.log(this.state.month[2][1][4].amount)} */}
                     {/* {console.log(this.state.month[2019])}
                     {console.log(this.state.month[2019][12])} */}
                 </div> :
