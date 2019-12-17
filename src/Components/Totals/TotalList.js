@@ -40,11 +40,16 @@ export default class Total extends Component {
                 Object.keys(byYearAndByMonth).map(function (year) {
                     // console.log("year", year)
                     Object.entries(byYearAndByMonth[year]).map(function (month) {
-                        // console.log("month", month);
+                    
+                        // console.log(month)
                         testingArray.push(month)
-                        // singleMonth = month
                     })
                 })
+                console.log( "test", testingArray[2][1])
+                const testingAdd = testingArray[2][1].reduce((a,b) => 
+                    a += b.amount, 0
+                );
+                console.log(testingAdd)     
 
                 // testingArray.push(byYearAndByMonth[2019])
                 // console.log("test",testingArray)
@@ -101,15 +106,15 @@ export default class Total extends Component {
                 <div>
                     <h2>Tips Chart for the Year</h2>
                     <Line data={this.state.data} />
-                    {/* <this.addingMonths /> */}
-                    {console.log(this.state.month[1])}
+                    {console.log(this.state)}
+                    {console.log(this.state.month[2][1][4].amount)}
                     {/* {console.log(this.state.month[2019])}
                     {console.log(this.state.month[2019][12])} */}
                 </div> :
                 <div>
                     <h2>Tips Chart for the Year</h2>
                     <Line data={this.state.data} />
-                    {console.log(this.state)}
+                    {/* {console.log(this.state)} */}
                 </div>
         );
     }
