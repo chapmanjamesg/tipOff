@@ -6,7 +6,7 @@ class TipForm extends Component {
     state = {
         userId: JSON.parse(localStorage.getItem("credentials")).userId,
         date: "",
-        amount: 0,
+        amount: "",
         loadingStatus: false,
     }
 
