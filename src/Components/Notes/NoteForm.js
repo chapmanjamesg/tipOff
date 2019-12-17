@@ -16,7 +16,7 @@ class NoteForm extends Component {
         this.setState(stateToChange)
     }
 
-    constructNewNote = evt => {
+    constructNewNote = evt => { 
         evt.preventDefault();
         if (this.state.notes === "") {
             window.alert("Please enter a note!")
