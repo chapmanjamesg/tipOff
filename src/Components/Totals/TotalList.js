@@ -8,7 +8,6 @@ export default class Total extends Component {
     state = {
         tips: [],
         data: {},
-        month: {},
         hasInformation: false,
     }
 
@@ -61,10 +60,9 @@ export default class Total extends Component {
                 this.setState({
                     hasInformation: true,
                     tips: sortTips,
-                    month: testingArray,
                     data: {
                         labels: [ "October", "November", "December", 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', "September"],
-                        dataSets: [
+                        datasets: [
                             {
                                 label: 'Tips by the Month',
                                 fill: false,
@@ -84,19 +82,10 @@ export default class Total extends Component {
                                 pointHoverBorderWidth: 2,
                                 pointRadius: 1,
                                 pointHitRadius: 10,
-                                data: testingAdd
+                                data: testingAdd,
                             }
 
-                        ],
-                        options: {
-                            scales: {
-                                yAxes: [{
-                                    ticks: {
-                                        beginAtZero: true
-                                    }
-                                }]
-                            }
-                        }
+                        ]
                     }
                 })
             })
