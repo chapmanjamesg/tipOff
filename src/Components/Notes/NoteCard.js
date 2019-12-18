@@ -12,7 +12,7 @@ class NoteCard extends Component {
                         type="button"
                         onClick={() => {
                             this.props.history.push(`/notes/${this.props.note.id}/edit`)}}>
-                                Edit Tip</button>
+                                Edit Note</button>
                     <button 
                         type="button"
                         onClick={() => 

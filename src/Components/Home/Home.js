@@ -92,7 +92,7 @@ class Home extends Component {
                         <NoteCard
                             key={note.id}
                             note={note}
-                            deleteTip={this.deleteNote}
+                            deleteNote={this.deleteNote}
                             {...this.props}
                         />
                     )}
