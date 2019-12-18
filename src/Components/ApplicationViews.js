@@ -8,6 +8,8 @@ import TipForm from "./Tips/TipForm";
 import NoteList from "./Notes/NoteList";
 import NoteForm from "./Notes/NoteForm";
 import Total from "./Totals/TotalList";
+import ClientList from "./Clients/ClientList";
+import ClientForm from "./Clients/ClientForm";
 
 export default class ApplicationViews extends Component {
 
@@ -71,6 +73,22 @@ export default class ApplicationViews extends Component {
                 <Route
                     exact path="/notes/:noteId(\d+)/edit" render={props => {
                         return <NoteForm {...props} isNew={false} />
+                    }}
+                />
+                <Route
+                    exact path="/clients" render={props => {
+                        if (this.props.user) {
+                            return <ClientList {...props} />
+                        } else { return <Redirect to="/login" /> }
+                    }} />
+                <Route
+                    exact path="/clients/new" render={props => {
+                        return <ClientForm {...props} isNew={true} />
+                    }}
+                />
+                <Route
+                    exact path="/clients/:clientId(\d+)/edit" render={props => {
+                        return <ClientForm {...props} isNew={false} />
                     }}
                 />
             </>
