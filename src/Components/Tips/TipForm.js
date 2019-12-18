@@ -7,6 +7,7 @@ class TipForm extends Component {
         userId: JSON.parse(localStorage.getItem("credentials")).userId,
         date: "",
         amount: "",
+        hours: "",
         loadingStatus: false,
     }
 
@@ -26,6 +27,7 @@ class TipForm extends Component {
                 userId: JSON.parse(localStorage.getItem("credentials")).userId,
                 date: this.state.date,
                 amount: Number(this.state.amount),
+                hours: Number(this.state.hours)
             }
             APIManager.post("tips", tip)
                 .then(() =>
@@ -41,6 +43,7 @@ class TipForm extends Component {
             userId: JSON.parse(localStorage.getItem("credentials")).userId,
             amount: Number(this.state.amount),
             date: this.state.date,
+            hours: this.state.hours
         };
 
         APIManager.put("tips", this.props.match.params.tipId, editedTip)
@@ -83,6 +86,18 @@ class TipForm extends Component {
                                 id="amount"
                                 placeholder="Your Tipped Amount"
                                 value={this.state.amount}
+                            />
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="hours">Hours:
+                        <input
+                                type="number"
+                                required
+                                onChange={this.handleFieldChange}
+                                id="hours"
+                                placeholder="How Many Hours"
+                                value={this.state.hours}
                             />
                         </label>
                     </fieldset>

@@ -9,6 +9,7 @@ class TipCard extends Component {
                 <div className="card-content">
                     <h5>Date: <span className="card-tipDate">{this.props.tip.date}</span></h5>
                     <p>Amount: <span className="card-tipAmount">${this.props.tip.amount}</span></p>
+                    <p>Hours:  <span className="card-tipHours">{this.props.tip.hours}</span></p>
                     <button 
                         type="button"
                         onClick={() => {
