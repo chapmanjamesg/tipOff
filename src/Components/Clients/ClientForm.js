@@ -63,9 +63,10 @@ class ClientForm extends Component {
     render() {
         return (
             <>
-                <form>
+                <form className="tc">
+                    <h3 className="tc pt6">Clients</h3>
                     <fieldset>
-                        <label htmlFor="name">Name:
+                        <label className="pt4 pr2" htmlFor="name">Name:</label>
                         <input
                                 type="text"
                                 required
@@ -74,11 +75,10 @@ class ClientForm extends Component {
                                 placeholder="The Client's Name"
                                 value={this.state.name}
                             />
-                        </label>
                     </fieldset>
-                    <fieldset>
-                        <label htmlFor="notes">Notes:
-                        <input
+                    <fieldset className="pt2">
+                        <label className="pr2" htmlFor="notes">Notes:</label>
+                        <textarea
                                 type="textarea"
                                 required
                                 onChange={this.handleFieldChange}
@@ -86,9 +86,9 @@ class ClientForm extends Component {
                                 placeholder="Notes About The Client"
                                 value={this.state.notes}
                             />
-                        </label>
                     </fieldset>
                     <button
+                        className="br-pill"
                         type="button"
                         disabled={this.state.loadingStatus}
                         onClick={this.props.isNew ? this.constructNewClient : this.updateExistingClient}

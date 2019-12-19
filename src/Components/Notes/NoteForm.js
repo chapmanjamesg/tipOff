@@ -61,9 +61,10 @@ class NoteForm extends Component {
     render() {
         return (
             <>
-                <form>
+                <form className="tc">
+                    <h3 className="tc pt6">Notes</h3>
                     <fieldset>
-                        <label htmlFor="date">Date:
+                        <label className="pt4 pr2" htmlFor="date">Date: </label>
                         <input
                                 type="date"
                                 required
@@ -71,10 +72,9 @@ class NoteForm extends Component {
                                 id="date"
                                 value={this.state.date}
                             />
-                        </label>
                     </fieldset>
-                    <fieldset>
-                        <label htmlFor="note">Note:
+                    <fieldset className="pt2">
+                        <label className="pr2"  htmlFor="note">Note: </label>
                         <textarea
                                 type="textarea"
                                 required
@@ -83,7 +83,6 @@ class NoteForm extends Component {
                                 placeholder="Your Note"
                                 value={this.state.note}
                             />
-                        </label>
                     </fieldset>
                     <button
                         className="br-pill"

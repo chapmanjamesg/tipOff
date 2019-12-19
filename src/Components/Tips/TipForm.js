@@ -65,9 +65,10 @@ class TipForm extends Component {
     render() {
         return (
             <>
-                <form>
+                <form className="tc">
+                <h3 className="tc pt6">Tips</h3>
                     <fieldset>
-                        <label htmlFor="date">Date:
+                        <label className="pt4 pr2" htmlFor="date">Date: </label>
                         <input
                                 type="date"
                                 required
@@ -75,10 +76,9 @@ class TipForm extends Component {
                                 id="date"
                                 value={this.state.date}
                             />
-                        </label>
                     </fieldset>
-                    <fieldset>
-                        <label htmlFor="amount">Amount:
+                    <fieldset className="pt2">
+                        <label className="pr2" htmlFor="amount">Amount: </label>
                         <input
                                 type="text"
                                 required
@@ -87,10 +87,9 @@ class TipForm extends Component {
                                 placeholder="Your Tipped Amount"
                                 value={this.state.amount}
                             />
-                        </label>
                     </fieldset>
-                    <fieldset>
-                        <label htmlFor="hours">Hours:
+                    <fieldset className="pt2 pb2">
+                        <label className="pr2" htmlFor="hours">Hours: </label>
                         <input
                                 type="number"
                                 required
@@ -99,7 +98,6 @@ class TipForm extends Component {
                                 placeholder="How Many Hours"
                                 value={this.state.hours}
                             />
-                        </label>
                     </fieldset>
                     <button
                         className="br-pill"

@@ -8,6 +8,7 @@ export default class Total extends Component {
     state = {
         tips: [],
         data: {},
+        data2: {},
         hasInformation: false,
     }
 
@@ -52,6 +53,8 @@ export default class Total extends Component {
                 const testingAdd = testingArray.map(tips =>
                     tips[1].reduce((total,b) => total + b.amount, 0)
                     )
+                const testingHours = testingArray.map(tips => 
+                    tips[1].reduce((total,b) => total + b.hours, 0))
                     // console.log("single",tips[1])
                 // console.log(testingAdd)     
                 // testingArray.push(byYearAndByMonth[2019])
@@ -67,8 +70,8 @@ export default class Total extends Component {
                                 label: 'Tips by the Month',
                                 fill: false,
                                 lineTension: 0.1,
-                                backgroundColor: 'rgba(75,192,192,0.4)',
-                                borderColor: 'rgba(75,192,192,1)',
+                                backgroundColor: 'rgba(0,255,0,0.3)',
+                                borderColor: 'rgba(0,255,0,0.3)',
                                 borderCapStyle: 'butt',
                                 borderDash: [],
                                 borderDashOffset: 0.0,
@@ -86,6 +89,33 @@ export default class Total extends Component {
                             }
 
                         ]
+                    },
+                    data2: {
+                        labels: [ "October", "November", "December", 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', "September"],
+                        datasets: [
+                            {
+                                label: 'Hours by the Month',
+                                fill: false,
+                                lineTension: 0.1,
+                                backgroundColor: 'rgba(75,192,192,0.4)',
+                                borderColor: 'rgba(0,0,255,0.3)',
+                                borderCapStyle: 'butt',
+                                borderDash: [],
+                                borderDashOffset: 0.0,
+                                borderJoinStyle: 'miter',
+                                pointBorderColor: 'rgba(75,192,192,1)',
+                                pointBackgroundColor: '#fff',
+                                pointHoverRadius: 5,
+                                pointBorderWidth: 1,
+                                pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+                                pointHoverBorderColor: 'rgba(220,220,220,1)',
+                                pointHoverBorderWidth: 2,
+                                pointRadius: 1,
+                                pointHitRadius: 10,
+                                data: testingHours,
+                            }
+
+                        ]
                     }
                 })
             })
@@ -97,8 +127,10 @@ export default class Total extends Component {
         return (
             this.state.hasInformation ?
                 <div>
-                    <h2>Tips Chart for the Year</h2>
+                    <h2 className="tc pt4">Charts for the Year</h2>
                     <Line data={this.state.data} />
+                    <hr />
+                    <Line data={this.state.data2} />
                     {/* {console.log(this.state)} */}
                     {/* {console.log(this.state.month[2][1][4].amount)} */}
                     {/* {console.log(this.state.month[2019])}
