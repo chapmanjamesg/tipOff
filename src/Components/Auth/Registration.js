@@ -48,10 +48,10 @@ class Registration extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleRegistration}>
-                <h3>Register an Account</h3>
+            <form className="tc" onSubmit={this.handleRegistration}>
+                <h3 className="tc pt6">Register an Account</h3>
                 <fieldset>
-                    <label htmlFor="inputUsername">
+                    <label className="pt4 pr2" htmlFor="inputUsername">
                         Username:  </label>
                         <input 
                             onChange={this.handleFieldChange}
@@ -61,8 +61,8 @@ class Registration extends Component {
                             required=""
                             autoFocus="" />
                 </fieldset>
-                <fieldset>
-                    <label htmlFor="inputEmail">
+                <fieldset className="pt2">
+                    <label className="pr2" htmlFor="inputEmail">
                         Email Address:  </label>
                         <input
                             onChange={this.handleFieldChange}
@@ -72,8 +72,8 @@ class Registration extends Component {
                             required=""
                             autoFocus="" />
                 </fieldset>
-                <fieldset>
-                    <label htmlFor="inputPassword">
+                <fieldset className="pt2 pb2">
+                    <label className="pr2" htmlFor="inputPassword">
                         Password:  </label>    
                         <input
                             onChange={this.handleFieldChange}
@@ -84,6 +84,7 @@ class Registration extends Component {
                             autoFocus="" />                
                 </fieldset>
                 <button
+                className="br-pill"
                 type="submit">
                     Register</button>
             </form> 

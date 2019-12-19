@@ -65,10 +65,11 @@ class Home extends Component {
     render() {
         return (
             <>
+                <h2 className="tc">Recent Tips</h2>
                 <div className="tc">
-                    <h2>Recent Tips</h2>
                     {this.state.tips.map(tip =>
                         <TipCard
+
                             key={tip.id}
                             tip={tip}
                             deleteTip={this.deleteTip}
@@ -87,8 +88,8 @@ class Home extends Component {
                             </button>
                 <br />
                 <br />
+                    <h2 className="tc">Recent Notes</h2>
                 <div className="tc">
-                    <h2>Recent Notes</h2>
                     {this.state.notes.map(note =>
                         <NoteCard
                             key={note.id}

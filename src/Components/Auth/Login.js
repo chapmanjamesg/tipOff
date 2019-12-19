@@ -45,10 +45,10 @@ class Login extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleLogin}>
-                <h3>Please Sign In</h3>
+            <form className="tc" onSubmit={this.handleLogin}>
+                <h3 className="tc pt6">Please Sign In</h3>
                 <fieldset>
-                    <label htmlFor="inputEmail">
+                    <label className="pt4 pr2" htmlFor="inputEmail">
                         Email Address:  </label>
                     <input
                         onChange={this.handleFieldChange}
@@ -57,8 +57,8 @@ class Login extends Component {
                         placeholder="Email Address"
                         required="" autoFocus="" />
                 </fieldset>
-                <fieldset>
-                    <label htmlFor="inputPassword">
+                <fieldset className="pt2 pb2">
+                    <label className="pr2" htmlFor="inputPassword">
                         Password:  </label>
                     <input
                         onChange={this.handleFieldChange}
@@ -67,7 +67,7 @@ class Login extends Component {
                         placeholder="Password"
                         required="" autoFocus="" />
                 </fieldset>
-                <button type="submit">
+                <button className="br-pill" type="submit">
                     Sign In</button>
             </form>
         )
