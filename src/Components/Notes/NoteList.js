@@ -38,6 +38,7 @@ class NoteList extends Component {
         return (
             <>
                 <button
+                    className="fl w-100 b"
                     type="button"
                     onClick={() => {
                         this.props.history.push("/notes/new")
@@ -45,7 +46,7 @@ class NoteList extends Component {
                     Add New Note
                     </button>
                 <hr />
-                <div>
+                <div className="tc">
                     <h2>Important Notes</h2>
                     {this.state.notes.map(note =>
                         <NoteCard
