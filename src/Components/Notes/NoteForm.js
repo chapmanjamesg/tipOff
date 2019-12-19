@@ -86,6 +86,7 @@ class NoteForm extends Component {
                         </label>
                     </fieldset>
                     <button
+                        className="br-pill"
                         type="button"
                         disabled={this.state.loadingStatus}
                         onClick={this.props.isNew ? this.constructNewNote : this.updateExistingNote}

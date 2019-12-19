@@ -14,7 +14,7 @@ class TipList extends Component {
             .then((tips) => {
                 const sortTips = tips.sort(function (a, b) {
                     let d1 = new Date(a.date), d2 = new Date(b.date)
-                    return d1 - d2
+                    return d2 - d1
                 })
                 this.setState({
                     tips: sortTips
@@ -38,6 +38,7 @@ class TipList extends Component {
         return (
             <>
                 <button 
+                    className="fl w-100 b"
                     type="button"
                     onClick={() => {
                         this.props.history.push("/tips/new")
@@ -45,7 +46,7 @@ class TipList extends Component {
                     Add New Tip
                     </button>
                 <hr />
-                <div>
+                <div className="tc">
                     <h2>Tip Tracker</h2>
                     {this.state.tips.map(tip =>
                         <TipCard

@@ -65,7 +65,7 @@ class Home extends Component {
     render() {
         return (
             <>
-                <div>
+                <div className="tc">
                     <h2>Recent Tips</h2>
                     {this.state.tips.map(tip =>
                         <TipCard
@@ -78,6 +78,7 @@ class Home extends Component {
                 </div>
                 <hr />
                 <button
+                    className="fl w-100"
                     type="button"
                     onClick={() => {
                         this.props.history.push("/tips/new")
@@ -86,7 +87,7 @@ class Home extends Component {
                             </button>
                 <br />
                 <br />
-                <div>
+                <div className="tc">
                     <h2>Recent Notes</h2>
                     {this.state.notes.map(note =>
                         <NoteCard
@@ -99,6 +100,7 @@ class Home extends Component {
                 </div>
                 <hr />
                 <button
+                    className="fl w-100"
                     type="button"
                     onClick={() => {
                         this.props.history.push("/notes/new")

@@ -34,6 +34,7 @@ class ClientList extends Component {
         return (
             <>
                 <button
+                    className="fl w-100 b"
                     type="button"
                     onClick={() => {
                         this.props.history.push("/clients/new")
@@ -41,7 +42,7 @@ class ClientList extends Component {
                     Add New Client
                     </button>
                 <hr />
-                <div>
+                <div className="tc">
                     <h2>Important Clients</h2>
                     {this.state.clients.map(client =>
                         <ClientCard
