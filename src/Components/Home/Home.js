@@ -40,7 +40,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        APIManager.getAll(`tips?userId=${JSON.parse(localStorage.getItem("credentials")).userId}&_limit=3`)
+        APIManager.getAll(`tips?userId=${JSON.parse(localStorage.getItem("credentials")).userId}&_limit=4`)
             .then((tips) => {
                 const sortTips = tips.sort(function (a, b) {
                     let d1 = new Date(a.date), d2 = new Date(b.date)
@@ -66,7 +66,7 @@ class Home extends Component {
         return (
             <>
                 <h2 className="tc">Recent Tips</h2>
-                <div className="tc">
+                <div className="">
                     {this.state.tips.map(tip =>
                         <TipCard
 
@@ -88,7 +88,7 @@ class Home extends Component {
                             </button>
                 <br />
                 <br />
-                    <h2 className="tc">Recent Notes</h2>
+                <h2 className="tc">Recent Notes</h2>
                 <div className="tc">
                     {this.state.notes.map(note =>
                         <NoteCard
