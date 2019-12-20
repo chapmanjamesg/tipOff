@@ -42,8 +42,8 @@ class ClientList extends Component {
                     Add New Client
                     </button>
                 <hr />
-                <div className="tc">
-                    <h2>Important Clients</h2>
+                <h2 className="tc">Important Clients</h2>
+                <div className="">
                     {this.state.clients.map(client =>
                         <ClientCard
                             key={client.id}

@@ -6,19 +6,19 @@ class ClientCard extends Component {
         return (
             <div className="card pa3">
                 <div className="fl ba tc bg-light-gray">
-                    <h5>Name: <span className="card-clientName">{this.props.client.name}</span></h5>
-                    <p>Notes: <span className="card-clientNote">{this.props.client.notes}</span></p>
+                    <h5><span className="card-clientName">{this.props.client.name}</span></h5>
+                    <p><span className="card-clientNote">{this.props.client.notes}</span></p>
                     <button 
-                        className="br-pill grow b fl w-50 tc bg-white"
+                        className="br-pill grow b fl w-25 tc bg-white ml5 mb2 mr2 mt2"
                         type="button"
                         onClick={() => {
                             this.props.history.push(`/clients/${this.props.client.id}/edit`)}}>
-                                Edit Client</button>
+                                Edit</button>
                     <button 
-                        className="br-pill grow b fl w-50 tc bg-white"
+                        className="br-pill grow b fl w-40 tc bg-white mt2"
                         type="button"
                         onClick={() => 
-                            this.props.deleteClient(this.props.client.id)}>Delete Client</button>
+                            this.props.deleteClient(this.props.client.id)}>Remove</button>
                 </div>
             </div>
         )

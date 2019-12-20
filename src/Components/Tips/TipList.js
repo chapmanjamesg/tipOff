@@ -46,8 +46,8 @@ class TipList extends Component {
                     Add New Tip
                     </button>
                 <hr />
-                <div className="tc">
-                    <h2>Tip Tracker</h2>
+                    <h2 className="tc">Tip Tracker</h2>
+                <div className="">
                     {this.state.tips.map(tip =>
                         <TipCard
                             key={tip.id}
